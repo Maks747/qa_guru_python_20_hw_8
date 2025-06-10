@@ -32,7 +32,7 @@ class Product:
         if self.check_quantity(quantity):
             self.quantity -= quantity
         else:
-            raise ValueError("Недостаточно количества продуктов")
+            raise ValueError("Недостаточно количества товаров")
 
     def __hash__(self):
         return hash(self.name + self.description)
@@ -93,7 +93,7 @@ class Cart:
         """
         for product, need_quantity in self.products.items():
             if need_quantity > product.quantity:
-                raise ValueError('Недостаточно количества продуктов')
+                raise ValueError('Недостаточно количества товаров')
         for product, need_quantity in self.products.items():
             product.buy(need_quantity)
 
